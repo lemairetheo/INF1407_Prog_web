@@ -1,67 +1,111 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
     margin: 0;
     padding: 0;
 }
 
-h1, h2 {
-    text-align: center;
-    color: #333;
+/* Container */
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
 }
 
+/* Title */
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Top bar */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Buttons / links */
 a {
     text-decoration: none;
-    color: #007bff;
-    margin: 0 5px;
+    color: #3498db;
+    font-weight: 500;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
-.container {
-    width: 60%;
-    margin: auto;
-    margin-top: 30px;
-}
-
+/* Cards */
 .card {
     background: white;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Hover effect 🔥 */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Book title */
+.card strong {
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+/* Actions */
+.actions {
+    margin-top: 10px;
+}
+
+/* Buttons */
 button {
-    background-color: #007bff;
+    background-color: #3498db;
     color: white;
     border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
+    padding: 8px 14px;
+    border-radius: 6px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #2980b9;
 }
 
-.top-bar {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
+/* Logout button style */
 form button {
     background: none;
     border: none;
-    color: #007bff;
+    color: #3498db;
     cursor: pointer;
     padding: 0;
-    font-size: 16px;
+    font-size: 14px;
 }
 
-form button:hover {
-    text-decoration: underline;
+/* Inputs */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* Spacing */
+form {
+    margin-top: 20px;
+}
+
+/* Back link */
+.back {
+    display: inline-block;
+    margin-top: 20px;
 }

@@ -82,12 +82,13 @@ button:hover {
 
 /* Logout button style */
 form button {
-    background: none;
+    background-color: #3498db;
+    color: white;
     border: none;
-    color: #3498db;
+    padding: 8px 14px;
+    border-radius: 6px;
     cursor: pointer;
-    padding: 0;
-    font-size: 14px;
+    margin-top: 10px;
 }
 
 /* Inputs */

@@ -3,12 +3,20 @@
 
 <div class="container">
 
+
     <h2>Entrar</h2>
 
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
+
+        <p>
+            <a href="{% url 'password_reset' %}">
+                Esqueceu sua senha?
+            </a>
+        </p>
         <button type="submit">Entrar</button>
     </form>
+    
 
 </div>

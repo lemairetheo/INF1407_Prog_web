@@ -1,0 +1,37 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="container">
+
+    <h1>Biblioteca</h1>
+
+    <div class="top-bar">
+        {% if user.is_authenticated %}
+            <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Sair</button>
+            </form>
+        {% else %}
+            <div>
+                <a href="{% url 'login' %}">Entrar</a>
+                <a href="{% url 'register' %}">Cadastrar</a>
+            </div>
+        {% endif %}
+
+        <a href="{% url 'book_create' %}">Adicionar livro</a>
+    </div>
+
+    {% for book in books %}
+        <div class="card">
+            <strong>{{ book.title }}</strong> - {{ book.author }}
+
+            {% if user == book.owner %}
+                <div>
+                    <a href="{% url 'book_update' book.id %}">Editar</a>
+                    <a href="{% url 'book_delete' book.id %}">Excluir</a>
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+
+</div>

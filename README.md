@@ -19,3 +19,11 @@ Este projeto é um sistema de gerenciamento de biblioteca desenvolvido para a di
 * **Banco de Dados:** SQLite (padrão do Django para desenvolvimento)
 * **Controle de Versão:** Git
 
+## Como usar
+* Criar uma conta : Acesse /register/, coloque um nome de usuário e senha e clique em Cadastrar. Você já fica logado automaticamente.
+* Fazer login : Acesse /accounts/login/, coloque seu usuário e senha e clique em Entrar.
+  Se esquecer a senha, clique em "Esqueceu sua senha?" e siga as instruções por email.
+* Ver os livros : A página inicial mostra todos os livros cadastrados. Clique em qualquer livro para ver os detalhes.
+* Adicionar um livro : Estando logado, clique em "Adicionar livro", preencha o título, autor e descrição, e salve.
+* Editar um livro : Na lista ou na página do livro, clique em "Editar". Esse botão só aparece para o dono do livro.
+* Deletar um livro : Na lista ou na página do livro, clique em "Deletar". Só o dono pode fazer isso.

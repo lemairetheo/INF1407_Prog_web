@@ -10,13 +10,16 @@
         {% csrf_token %}
         {{ form.as_p }}
 
-        <p>
+        <span class="forgot-link">
             <a href="{% url 'password_reset' %}">
                 Esqueceu sua senha?
             </a>
-        </p>
+        </span>
         <button type="submit">Entrar</button>
     </form>
     
+    <div style="text-align: center; margin-top: 20px;">
+        <p>Ainda não tem uma conta? <a href="{% url 'register' %}">Cadastrar</a></p>
+    </div>
 
 </div>

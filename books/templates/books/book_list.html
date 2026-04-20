@@ -1,47 +1,74 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="{% url 'book_list' %}" class="navbar-brand">📚 Biblioteca</a>
+    <div class="navbar-links">
+        {% if user.is_authenticated %}
+            <span class="nav-user">Olá, {{ user.username }}</span>
+            <form method="post" action="{% url 'logout' %}" style="margin:0">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-secondary">Sair</button>
+            </form>
+        {% else %}
+            <a href="{% url 'login' %}" class="btn btn-secondary">Entrar</a>
+            <a href="{% url 'register' %}" class="btn btn-primary">Cadastrar</a>
+        {% endif %}
+    </div>
+</nav>
 
 <div class="container">
 
-    <h1>📚 Biblioteca</h1>
-
-    <div class="top-bar">
+        <div class="top-bar">
+        <h1>Todos os livros</h1>
         {% if user.is_authenticated %}
-            <p>Olá {{ user.username }}</p>
-            <form action="{% url 'logout' %}" method="post">
-                {% csrf_token %}
-                <button type="submit">Sair</button>
-            </form>
-        {% else %}
-            <div>
-                <a href="{% url 'login' %}">Entrar</a> |
-                <a href="{% url 'register' %}">Cadastrar</a>
-            </div>
+            <a href="{% url 'book_create' %}" class="btn btn-primary">+ Adicionar livro</a>
         {% endif %}
     </div>
-
-    <a href="{% url 'book_create' %}">
-        <button>+ Adicionar livro</button>
-    </a>
-
-    {% for book in books %}
-        <div class="card">
-            <strong>
-                <a href="{% url 'book_detail' book.id %}">
-                    {{ book.title }}
-                </a>
-            </strong>
-            <p>Autor: {{ book.author }}</p>
-
-            {% if user == book.owner %}
-                <div class="actions">
-                    <a href="{% url 'book_update' book.id %}">✏️ Editar</a> |
-                    <a href="{% url 'book_delete' book.id %}">🗑 Excluir</a>
+ 
+    <div class="books-grid">
+        {% for book in books %}
+        <div class="book-card">
+            <a href="{% url 'book_detail' book.id %}" style="text-decoration:none;color:inherit">
+                <div class="book-cover cover-{% cycle '0' '1' '2' '3' '4' '5' %}">
+                    📖
+                    {% if user == book.owner %}
+                        <span class="mine-badge">meu livro</span>
+                    {% endif %}
                 </div>
+                <div class="book-body">
+                    <div class="book-title">{{ book.title }}</div>
+                    <div class="book-author">{{ book.author }}</div>
+                    <div class="book-desc">{{ book.description }}</div>
+                </div>
+            </a>
+            {% if user == book.owner %}
+            <div class="book-actions">
+                <a href="{% url 'book_update' book.id %}" class="btn btn-secondary btn-sm">Editar</a>
+                <a href="{% url 'book_delete' book.id %}" class="btn btn-danger btn-sm">Excluir</a>
+            </div>
             {% endif %}
         </div>
-    {% empty %}
-        <p>Nenhum livro cadastrado ainda.</p>
-    {% endfor %}
-
+        {% empty %}
+        <div class="empty-state">
+            <div class="empty-icon">📭</div>
+            <p>Nenhum livro cadastrado ainda.</p>
+            {% if user.is_authenticated %}
+                <a href="{% url 'book_create' %}" class="btn btn-primary">+ Adicionar o primeiro livro</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="btn btn-primary">Entrar para adicionar</a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+ 
 </div>
+</body>
+</html>

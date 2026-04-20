@@ -1,18 +1,46 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ book.title }} — Biblioteca</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+ 
+<nav class="navbar">
+    <a href="{% url 'book_list' %}" class="navbar-brand">📚 Biblioteca</a>
+    <div class="navbar-links">
+        {% if user.is_authenticated %}
+            <span class="nav-user">Olá, {{ user.username }}</span>
+            <form method="post" action="{% url 'logout' %}" style="margin:0">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-secondary">Sair</button>
+            </form>
+        {% else %}
+            <a href="{% url 'login' %}" class="btn btn-secondary">Entrar</a>
+        {% endif %}
+    </div>
+</nav>
 
 <div class="container">
 
-    <div class="card">
-        <h2>{{ book.title }}</h2>
+    <a href="{% url 'book_list' %}" class="back">← Voltar à lista</a>
 
-        <p><strong>Autor:</strong> {{ book.author }}</p>
-
-        <p><strong>Descrição:</strong></p>
-        <p>{{ book.description }}</p>
+    <div class="card" style="margin-top:20px">
+        <div style="display:flex;align-items:flex-start;gap:24px">
+            <div class="book-cover-detail"></div>
+            <div style="flex:1">
+                <h2 style="margin-bottom:4px">{{ book.title }}</h2>
+                <p style="color:#64748b;font-size:15px;margin-bottom:16px">{{ book.author }}</p>
+                <hr style="border:none;border-top:1px solid #e2e8f0;margin-bottom:16px">
+                <p style="color:#475569;line-height:1.7">{{ book.description }}</p>
+                <p style="color:#94a3b8;font-size:12px;margin-top:16px">
+                    Adicionado por <strong>{{ book.owner.username }}</strong>
+                </p>
+            </div>
+        </div>
     </div>
-
-    <a class="back" href="{% url 'book_list' %}">⬅ Voltar</a>
 
     {% if user == book.owner %}
         <div class="actions">
@@ -22,3 +50,5 @@
     {% endif %}
 
 </div>
+</body>
+</html>

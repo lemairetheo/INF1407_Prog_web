@@ -1,18 +1,59 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-<div class="container">
-
-    <h2>{% if book %}Editar{% else %}Adicionar{% endif %} livro</h2>
-
-    <form method="post">
-        {% csrf_token %}
-
-        <input type="text" name="title" placeholder="Título" value="{{ book.title|default:'' }}"><br><br>
-        <input type="text" name="author" placeholder="Autor" value="{{ book.author|default:'' }}"><br><br>
-        <textarea name="description" placeholder="Descrição">{{ book.description|default:'' }}</textarea><br><br>
-
-        <button type="submit">Salvar</button>
-    </form>
-
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% if book %}Editar{% else %}Adicionar{% endif %} livro — Biblioteca</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+ 
+<nav class="navbar">
+    <a href="{% url 'book_list' %}" class="navbar-brand">📚 Biblioteca</a>
+    <div class="navbar-links">
+        <span class="nav-user">Olá, {{ user.username }}</span>
+        <form method="post" action="{% url 'logout' %}" style="margin:0">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-secondary">Sair</button>
+        </form>
+    </div>
+</nav>
+ 
+<div class="container" style="max-width:560px">
+ 
+    <a href="{% url 'book_list' %}" class="back">← Voltar à lista</a>
+ 
+    <div class="card" style="margin-top:20px;padding:32px">
+        <h2 style="text-align:left;margin-bottom:24px">
+            {% if book %}Editar livro{% else %}Adicionar um livro{% endif %}
+        </h2>
+ 
+        <form method="post">
+            {% csrf_token %}
+ 
+            <div class="field">
+                <label for="title">Título</label>
+                <input type="text" id="title" name="title" value="{{ book.title|default:'' }}">
+            </div>
+ 
+            <div class="field">
+                <label for="author">Autor</label>
+                <input type="text" id="author" name="author"
+                       value="{{ book.author|default:'' }}">
+            </div>
+ 
+            <div class="field">
+                <label for="description">Descrição</label>
+                <textarea id="description" name="description">{{ book.description|default:'' }}</textarea>
+            </div>
+ 
+            <div style="display:flex;gap:10px;margin-top:8px">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <a href="{% url 'book_list' %}" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+ 
 </div>
+</body>
+</html>

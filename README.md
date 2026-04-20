@@ -1,4 +1,4 @@
-readme_content = """# Projeto Biblioteca - INF1407
+# Projeto Biblioteca - INF1407
 
 ## Alunos
 * **Lucie Brunelle**
@@ -19,6 +19,12 @@ Este projeto é um sistema de gerenciamento de biblioteca desenvolvido para a di
 * **Banco de Dados:** SQLite (padrão do Django para desenvolvimento)
 * **Controle de Versão:** Git
 
+## O que funcionou
+
+
+## O que nao funcionou
+
+
 ## Como usar
 * Criar uma conta : Acesse /register/, coloque um nome de usuário e senha e clique em Cadastrar. Você já fica logado automaticamente.
 * Fazer login : Acesse /accounts/login/, coloque seu usuário e senha e clique em Entrar.
@@ -27,3 +33,4 @@ Este projeto é um sistema de gerenciamento de biblioteca desenvolvido para a di
 * Adicionar um livro : Estando logado, clique em "Adicionar livro", preencha o título, autor e descrição, e salve.
 * Editar um livro : Na lista ou na página do livro, clique em "Editar". Esse botão só aparece para o dono do livro.
 * Deletar um livro : Na lista ou na página do livro, clique em "Deletar". Só o dono pode fazer isso.
+

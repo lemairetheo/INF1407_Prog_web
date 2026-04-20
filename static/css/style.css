@@ -11,7 +11,7 @@ body {
 /* Container */
 .container {
     width: 90%;
-    max-width: 800px; 
+    max-width: 1000px; 
     margin: 60px auto;
 }
 
@@ -23,14 +23,47 @@ h1, h2 {
 }
  
 h1 {
-    font-size: 26px;
+    font-size: 28px;
     margin-bottom: 24px;
 }
  
 h2 {
-    font-size: 22px;
-    margin-bottom: 20px;
+    font-size: 24px;
+    margin-bottom: 24px;
     text-align: center;
+}
+
+/* Navigation bar */
+.navbar {
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+ 
+.navbar-brand {
+    font-size: 20px;
+    font-weight: 600;
+    color: #3b82f6;
+    text-decoration: none;
+    letter-spacing: -0.3px;
+}
+ 
+.navbar-brand:hover {
+    text-decoration: none;
+    color: #2563eb;
+}
+ 
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 /* Top bar */
@@ -46,7 +79,7 @@ a {
     text-decoration: none;
     color: #3b82f6;
     font-weight: 500;
-    transition: color 0.15s;
+    transition: color 0.2s ease;
 }
 
 a:hover {
@@ -56,28 +89,26 @@ a:hover {
 
 /* Cards */
 .card {
-    background: white;
+    background: #ffffff;
     padding: 22px 24px;
     margin-bottom: 16px;
     border-radius: 14px;
     border: 1px solid #e8edf3;
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
-
-/* Hover effect */
+ 
 .card:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 28px rgba(59, 130, 246, 0.10);
     border-color: #bfdbfe;
 }
-
-/* Book title */
+ 
 .card strong {
     font-size: 17px;
     font-weight: 600;
     color: #0f172a;
 }
-
+ 
 .card p {
     color: #64748b;
     font-size: 14px;
@@ -86,62 +117,133 @@ a:hover {
 
 /* Actions */
 .actions {
-    margin-top: 10px;
-}
-
-.card-meta {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-top: 12px;
-    font-size: 13px;
-    color: #94a3b8;
+    gap: 8px;
+    margin-top: 14px;
+    flex-wrap: wrap;
 }
 
 /* Buttons */
-button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 6px;
+button, .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #2980b9;
-}
-
-/* Logout button style */
-form button {
-    background-color: #3498db;
-    color: white;
+    text-align: center;
     border: none;
-    padding: 8px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 10px;
+    transition: all 0.2s ease;
+    width: auto;
 }
 
-/* Inputs */
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 8px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+button:active, .btn:active {
+    transform: scale(0.97);
 }
 
-/* Spacing */
+button, .btn, .btn-primary {
+    background-color: #3b82f6;
+    color: #ffffff;
+}
+ 
+button:hover, .btn:hover, .btn-primary:hover {
+    background-color: #2563eb;
+}
+
+.btn-secondary {
+    background-color: #e2e8f0;
+    color: #475569;
+}
+
+.btn-secondary:hover {
+    background-color: #cbd5e1;
+    color: #1e293b;
+}
+
+.btn-danger {
+    background-color: #ef4444;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #dc2626;
+}
+
+/* login / register*/
+.auth-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 40px 44px;
+    max-width: 420px;
+    margin: 60px auto;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+ 
+.auth-card h2 {
+    font-size: 22px;
+    margin-bottom: 28px;
+    text-align: center;
+    color: #0f172a;
+}
+
+/* ── Forms ── */
 form {
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    margin: 0 auto;
+    gap: 14px;
+}
+ 
+label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #475569;
+    margin-bottom: 4px;
+    display: block;
+}
+ 
+input[type="text"], input[type="password"], input[type="email"], textarea, select {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-family: inherit;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #0f172a;
+    transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+    outline: none;
+}
+ 
+input:focus, textarea:focus, select:focus {
+    border-color: #93c5fd;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+form p {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0;
 }
 
 /* Back link */
 .back {
-    display: inline-block;
-    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #64748b;
+    margin-top: 24px;
+}
+ 
+.back:hover {
+    color: #3b82f6;
 }
 
 /* Forgot password link */
@@ -157,22 +259,154 @@ form {
     font-weight: 400;
 }
 
-/* Alert messages */
-.alert {
-    padding: 12px 16px;
-    border-radius: 10px;
-    font-size: 14px;
+/*empty state*/
+.empty-state {
+    text-align: center;
+    padding: 64px 0;
+    color: #94a3b8;
+}
+ 
+.empty-state p {
+    font-size: 15px;
     margin-bottom: 20px;
 }
- 
-.alert-success {
-    background: #f0fdf4;
-    color: #166534;
-    border: 1px solid #bbf7d0;
+
+/* Navbar */
+.navbar {
+    background: #fff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 58px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-brand {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    text-decoration: none;
+}
+
+.navbar-brand:hover { 
+    text-decoration: none; 
+}
+.navbar-links { 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+}
+.nav-user { 
+    color: #64748b; 
+    font-size: 13px; 
+    font-weight: 500; 
+    margin-right: 4px; 
 }
  
-.alert-error {
-    background: #fff1f2;
-    color: #9f1239;
-    border: 1px solid #fecdd3;
+/* Books grid */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 16px;
+    margin-top: 8px;
 }
+
+.book-card {
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #e8edf3;
+    overflow: hidden;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.book-card:hover {
+    transform: translateY(-3px);
+    border-color: #bfdbfe;
+    box-shadow: 0 8px 24px rgba(59,130,246,0.10);
+}
+
+.book-cover {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 38px;
+    position: relative;
+}
+
+.cover-0 { background: #eff6ff; }
+.cover-1 { background: #f0fdf4; }
+.cover-2 { background: #fffbeb; }
+.cover-3 { background: #fdf4ff; }
+.cover-4 { background: #fff1f2; }
+.cover-5 { background: #f0fdfa; }
+
+.mine-badge {
+    position: absolute;
+    top: 8px; right: 8px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+}
+
+.book-body { padding: 14px 16px; }
+.book-title { 
+    font-size: 14px; 
+    font-weight: 600; 
+    color: #0f172a; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; }
+
+.book-author { 
+    font-size: 12px; 
+    color: #64748b; 
+    margin-top: 3px; 
+}
+.book-desc { 
+    font-size: 12px; 
+    color: #94a3b8; 
+    margin-top: 6px; 
+    line-height: 1.5; 
+    overflow: hidden; 
+}
+.book-actions { 
+    display: flex; 
+    gap: 6px; 
+    padding: 0 16px 14px; 
+    flex-wrap: wrap; 
+}
+.btn-sm { 
+    padding: 5px 10px; 
+    font-size: 12px; 
+}
+ 
+/* Book detail cover */
+.book-cover-detail {
+    width: 90px;
+    height: 120px;
+    background: #eff6ff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    flex-shrink: 0;
+}
+ 
+/* Form field */
+.field { display: flex; flex-direction: column; gap: 5px; margin-bottom: 16px; }
+.field label { font-size: 13px; font-weight: 500; color: #475569; }
+ 
+/* Empty state */
+.empty-state { text-align: center; padding: 72px 0; color: #94a3b8; grid-column: 1/-1; }
+.empty-icon { font-size: 48px; margin-bottom: 14px; }
+.empty-state p { font-size: 15px; margin-bottom: 20px; }

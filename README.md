@@ -130,12 +130,12 @@ https://inf1407-prog-web.onrender.com
 
 ## Possíveis melhorias futuras
 
-* ⭐ Sistema de avaliações (reviews) para livros
-* 🖼️ Upload de imagem de capa dos livros
-* 🔍 Sistema de busca e filtros
-* 📊 Classificação por categorias ou gêneros
-* 👥 Compartilhamento de livros entre usuários
-* 📱 Melhorias na interface responsiva
+*  Sistema de avaliações (reviews) para livros
+*  Upload de imagem de capa dos livros
+*  Sistema de busca e filtros
+*  Classificação por categorias ou gêneros
+*  Compartilhamento de livros entre usuários
+*  Melhorias na interface responsiva
 
 ---
 
@@ -150,6 +150,6 @@ O projeto foi desenvolvido respeitando as restrições da disciplina:
 
 ---
 
-## 🏁 Conclusão
+##  Conclusão
 
 O sistema atende aos requisitos propostos, oferecendo uma solução funcional e organizada para gerenciamento de biblioteca pessoal, com possibilidade de expansão futura.

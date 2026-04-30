@@ -1,13 +1,13 @@
-# 📚 Projeto Biblioteca - INF1407
+# Projeto Biblioteca - INF1407
 
-## 👨‍🎓 Alunos
+## Alunos
 
 * Lucie Brunelle
 * Théo Lemaire
 
 ---
 
-## 🎯 Escopo do Projeto
+## Escopo do Projeto
 
 Este projeto consiste em um sistema web de gerenciamento de biblioteca pessoal, desenvolvido para a disciplina de Programação para Web.
 
@@ -15,39 +15,39 @@ O objetivo principal é permitir que usuários gerenciem seu próprio catálogo 
 
 ---
 
-## ⚙️ Funcionalidades Implementadas
+## Funcionalidades Implementadas
 
-### 🔐 Sistema de Autenticação
+### Sistema de Autenticação
 
 * Cadastro de novos usuários (register)
 * Login e logout
 * Recuperação de senha (fluxo por e-mail simulado)
 
-### 📖 Gestão de Livros (CRUD)
+### Gestão de Livros (CRUD)
 
 * Criar (adicionar novos livros)
 * Ler (visualizar lista e detalhes)
 * Atualizar (editar informações)
 * Deletar (remover livros)
 
-### 👤 Gestão por Usuário
+### Gestão por Usuário
 
 * Cada usuário gerencia apenas seus próprios livros
 * Interface adaptada para usuários autenticados
 
-### 📄 Visualização
+### Visualização
 
 * Página inicial com lista de livros
 * Página de detalhe para cada livro
 
-### 🎨 Interface
+### Interface
 
 * Design responsivo
 * Desenvolvido apenas com HTML e CSS (sem JavaScript)
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 * **Backend:** Python 3.x + Django 5.x
 * **Frontend:** HTML5 + CSS3
@@ -57,7 +57,7 @@ O objetivo principal é permitir que usuários gerenciem seu próprio catálogo 
 
 ---
 
-## ✅ O que funcionou
+## O que funcionou
 
 * Sistema completo de autenticação
 * CRUD completo dos livros
@@ -68,19 +68,19 @@ O objetivo principal é permitir que usuários gerenciem seu próprio catálogo 
 
 ---
 
-## ❌ O que não funcionou
+## O que não funcionou
 
 * Sistema de envio real de e-mails (apenas simulado no console)
 * Algumas limitações relacionadas ao banco SQLite em produção
 
 ---
 
-## 🚀 Como usar
+## Como usar
 
-### 🔹 Acessar o site
+###  Acessar o site
 
 Acesse:
-👉 https://inf1407-prog-web.onrender.com
+https://inf1407-prog-web.onrender.com
 
 ---
 
@@ -128,7 +128,7 @@ Acesse:
 
 ---
 
-## 🚧 Possíveis melhorias futuras
+## Possíveis melhorias futuras
 
 * ⭐ Sistema de avaliações (reviews) para livros
 * 🖼️ Upload de imagem de capa dos livros
@@ -139,7 +139,7 @@ Acesse:
 
 ---
 
-## 📌 Observações
+## Observações
 
 O projeto foi desenvolvido respeitando as restrições da disciplina:
 

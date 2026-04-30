@@ -84,7 +84,7 @@ https://inf1407-prog-web.onrender.com
 
 ---
 
-### 🔹 Criar uma conta
+###  Criar uma conta
 
 * Acesse `/register/`
 * Preencha usuário e senha
@@ -92,7 +92,7 @@ https://inf1407-prog-web.onrender.com
 
 ---
 
-### 🔹 Fazer login
+###  Fazer login
 
 * Acesse `/accounts/login/`
 * Insira suas credenciais
@@ -100,29 +100,29 @@ https://inf1407-prog-web.onrender.com
 
 ---
 
-### 🔹 Recuperar senha
+###  Recuperar senha
 
 * Clique em "Esqueceu sua senha?"
 * Siga as instruções exibidas (simuladas)
 
 ---
 
-### 🔹 Gerenciar livros
+###  Gerenciar livros
 
-#### ➕ Adicionar livro
+####  Adicionar livro
 
 * Clique em "Adicionar livro"
 * Preencha título, autor e descrição
 
-#### ✏️ Editar livro
+####  Editar livro
 
 * Disponível apenas para o dono do livro
 
-#### ❌ Deletar livro
+####  Deletar livro
 
 * Disponível apenas para o dono do livro
 
-#### 👁️ Ver detalhes
+####  Ver detalhes
 
 * Clique em qualquer livro da lista
 
